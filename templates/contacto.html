@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- Banner simple sin imagen -->
+<div class="page-banner page-banner--plain">
+    <h1>Contáctanos</h1>
+    <p>Estamos aquí para apoyarte</p>
+</div>
+
+<div class="page-content">
+
+    <p style="text-align:center; max-width:700px; margin: 0 auto 40px;">
+        Si tienes dudas, necesitas una demostración o deseas más información
+        sobre nuestra plataforma, completa el siguiente formulario y nuestro
+        equipo se pondrá en contacto contigo a la brevedad.
+    </p>
+
+    <div class="contact-box">
+        <form method="POST">
+            <div class="form-group">
+                <label>Nombre</label>
+                <input type="text" name="nombre" placeholder="Tu nombre completo" required>
+            </div>
+
+            <div class="form-group">
+                <label>Correo electrónico</label>
+                <input type="email" name="email" placeholder="correo@ejemplo.cl" required>
+            </div>
+
+            <div class="form-group">
+                <label>Mensaje</label>
+                <textarea name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary">
+                Enviar mensaje
+            </button>
+        </form>
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- HERO / CARRUSEL -->
+<section class="hero-carousel">
+    <div class="carousel">
+
+        <div class="carousel-slide active"
+             style="background-image:url('/static/img/cama.jpeg')">
+            <div class="hero-content">
+                <h1>Gestión Inteligente de Camas</h1>
+                <p>
+                    Optimización clínica, trazabilidad y control en tiempo real
+                    para el traslado seguro de pacientes.
+                </p>
+            </div>
+        </div>
+
+        <div class="carousel-slide"
+             style="background-image:url('/static/img/ambulancia.jpg')">
+            <div class="hero-content">
+                <h1>Coordinación de Traslados Médicos</h1>
+                <p>
+                    Integración eficiente entre hospitales, clínicas y
+                    servicios de traslado.
+                </p>
+            </div>
+        </div>
+
+        <div class="carousel-slide"
+             style="background-image:url('/static/img/gestion.jpg')">
+            <div class="hero-content">
+                <h1>Tecnología para Decisiones Clínicas</h1>
+                <p>
+                    Información confiable para reducir costos, tiempos y
+                    errores administrativos.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="carousel-dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+</section>
+
+<!-- BLOQUE 1: TEXTO IZQUIERDA / IMAGEN DERECHA -->
+<section class="section">
+    <div class="info-split">
+
+        <div class="info-card">
+            <h2>¿Qué es Gestión de Camas?</h2>
+            <p>
+                Gestión de Camas es una plataforma tecnológica diseñada para
+                coordinar el traslado de pacientes entre centros de salud,
+                aseguradoras y unidades clínicas, garantizando continuidad
+                asistencial, seguridad de la información y optimización de
+                recursos críticos.
+            </p>
+        </div>
+
+        <div class="info-image">
+            <img src="/static/img/ambulancia.jpg" alt="Traslado médico">
+        </div>
+
+    </div>
+</section>
+
+<!-- BENEFICIOS -->
+<section class="section beneficios-section">
+
+    <h2>Beneficios Clave</h2>
+
+    <div class="beneficios-grid">
+        <div class="card">
+            <h3>Optimización Operacional</h3>
+            <span>
+                Reducción de tiempos de espera y uso eficiente de camas críticas.
+            </span>
+        </div>
+    
+        <div class="card">
+            <h3>Coordinación Interinstitucional</h3>
+            <span>
+                Comunicación fluida entre centros de salud, ambulancias e isapres.
+            </span>
+        </div>
+    
+        <div class="card">
+            <h3>Seguridad y Trazabilidad</h3>
+            <span>
+                Protección de datos clínicos conforme a normativa vigente.
+            </span>
+        </div>
+    </div>
+    
+</section>
+
+<!-- BLOQUE 2: IMAGEN IZQUIERDA / TEXTO DERECHA -->
+<section class="section">
+    <div class="info-split reverse">
+
+        <div class="info-image">
+            <img src="/static/img/cama.jpeg" alt="Gestión hospitalaria">
+        </div>
+
+        <div class="info-card">
+            <h2>Moderniza la gestión hospitalaria</h2>
+            <p>
+                Implementa una solución tecnológica diseñada para mejorar la
+                eficiencia clínica, reducir costos operacionales y garantizar
+                una atención continua y segura para cada paciente.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

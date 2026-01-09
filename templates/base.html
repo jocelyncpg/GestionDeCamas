@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Camas</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <!-- JS -->
+    <script src="{{ url_for('static', filename='js/main.js') }}" defer></script>
+</head>
+<body>
+
+
+<!-- NAVBAR -->
+<header class="header">
+    <div class="navbar-container">
+        <div class="logo">
+            Gestión de Camas
+        </div>
+
+        <nav class="nav-links">
+            <a href="/">Inicio</a>
+            <a href="/nosotros">Nosotros</a>
+            <a href="/contacto">Contacto</a>
+            <button class="btn-login" onclick="openLogin()">Ingresar</button>
+        </nav>
+    </div>
+</header>
+
+<!-- CONTENIDO -->
+{% block content %}{% endblock %}
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-inner">
+
+        <!-- COLUMNA 1 -->
+        <div class="footer-brand">
+            <h3>Gestión de Camas</h3>
+            <p>
+                Plataforma tecnológica para la optimización de camas hospitalarias
+                y coordinación de traslados clínicos.
+            </p>
+        </div>
+
+        <!-- COLUMNA 2 -->
+        <div class="footer-links">
+            <h4>Plataforma</h4>
+            <a href="/">Inicio</a>
+            <a href="/nosotros">Nosotros</a>
+            <a href="/contacto">Contacto</a>
+        </div>
+
+        <!-- COLUMNA 3 -->
+        <div class="footer-contact">
+            <h4>Contacto</h4>
+
+            <div class="contact-item">
+                <span>📧</span>
+                <a href="mailto:contacto@gestiondecamas.cl">
+                    contacto@gestiondecamas.cl
+                </a>
+            </div>
+
+            <div class="footer-social">
+                <a href="https://wa.me/56912345678" target="_blank" aria-label="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            
+                <a href="https://www.instagram.com/gestiondecamas" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <!-- BARRA INFERIOR -->
+    <div class="footer-bottom">
+        © 2026 Gestión de Camas · Todos los derechos reservados
+    </div>
+</footer>

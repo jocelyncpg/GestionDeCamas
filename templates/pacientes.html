@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Pacientes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<header>
+    <h1>Gestión de Camas</h1>
+    <nav>
+        <a href="/">Inicio</a>
+        <a href="/contacto">Contacto</a>
+    </nav>
+</header>
+
+<div class="container">
+    <h2>Listado de Pacientes</h2>
+
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Cama</th>
+            <th>Correo</th>
+        </tr>
+        <tr>
+            <td>Juan Pérez</td>
+            <td>UCI-03</td>
+            <td><span class="mail-icon">📧</span></td>
+        </tr>
+        <tr>
+            <td>María Soto</td>
+            <td>MED-12</td>
+            <td><span class="mail-icon">📧</span></td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="page-banner--plain">
+    <div class="dashboard-topbar">
+        
+        <div class="dashboard-title">
+            <h1>Dashboard de Gestión</h1>
+            <p>Control de estado de pacientes</p>
+        </div>
+
+        <a href="/logout" class="btn-logout">
+            Cerrar sesión
+        </a>
+
+    </div>
+</div>
+
+
+<div class="page-content">
+
+    <div class="dashboard-card">
+        <table class="dashboard-table">
+            <thead>
+                <tr>
+                    <th>Paciente</th>
+                    <th>Edad</th>
+                    <th>Sexo</th>
+                    <th>Estado</th>
+                    <th>Contacto</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for p in pacientes %}
+                <tr>
+                    <td>{{ p.nombre }}</td>
+                    <td>{{ p.edad }}</td>
+                    <td>{{ p.sexo }}</td>
+                    <td>
+                        <span class="estado {{ p.estado|lower|replace(' ', '-') }}">
+                            {{ p.estado }}
+                        </span>
+                    </td>
+                    <td>
+                        <a href="mailto:{{ p.email }}" class="mail-icon" title="Enviar correo">
+                            ✉
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+{% endblock %}
