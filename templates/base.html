@@ -7,17 +7,32 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+    <!-- Font Awesome -->
     <link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <!-- CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 
-    <!-- JS -->
-    <script src="{{ url_for('static', filename='js/main.js') }}" defer></script>
-</head>
-<body>
+    <!-- JS LOGIN FAKE -->
+    <script>
+        function openLogin() {
+            document.getElementById("loginModal").style.display = "flex";
+        }
 
+        function closeLogin() {
+            document.getElementById("loginModal").style.display = "none";
+        }
+
+        // LOGIN FAKE (mockup)
+        function fakeLogin(event) {
+            event.preventDefault();
+            window.location.href = "/dashboard";
+        }
+    </script>
+</head>
+
+<body>
 
 <!-- NAVBAR -->
 <header class="header">
@@ -30,18 +45,44 @@
             <a href="/">Inicio</a>
             <a href="/nosotros">Nosotros</a>
             <a href="/contacto">Contacto</a>
-            <button class="btn-login" onclick="openLogin()">Ingresar</button>
+            <button type="button" class="btn-login" onclick="openLogin()">Ingresar</button>
         </nav>
     </div>
 </header>
 
 <!-- CONTENIDO -->
 {% block content %}{% endblock %}
+
+<!-- MODAL LOGIN -->
+<div id="loginModal" class="modal" style="display: none;">
+    <div class="modal-content">
+
+        <span class="modal-close" onclick="closeLogin()">&times;</span>
+
+        <h2>Acceso Plataforma</h2>
+
+        <form onsubmit="fakeLogin(event)">
+            <div class="form-group">
+                <label>Correo electrónico</label>
+                <input type="email" required>
+            </div>
+
+            <div class="form-group">
+                <label>Contraseña</label>
+                <input type="password" required>
+            </div>
+
+            <button type="submit" class="btn-login">
+                Ingresar
+            </button>
+        </form>
+    </div>
+</div>
+
 <!-- FOOTER -->
 <footer class="footer">
     <div class="footer-inner">
 
-        <!-- COLUMNA 1 -->
         <div class="footer-brand">
             <h3>Gestión de Camas</h3>
             <p>
@@ -50,7 +91,6 @@
             </p>
         </div>
 
-        <!-- COLUMNA 2 -->
         <div class="footer-links">
             <h4>Plataforma</h4>
             <a href="/">Inicio</a>
@@ -58,7 +98,6 @@
             <a href="/contacto">Contacto</a>
         </div>
 
-        <!-- COLUMNA 3 -->
         <div class="footer-contact">
             <h4>Contacto</h4>
 
@@ -70,21 +109,22 @@
             </div>
 
             <div class="footer-social">
-                <a href="https://wa.me/56912345678" target="_blank" aria-label="WhatsApp">
+                <a href="https://wa.me/56912345678" target="_blank">
                     <i class="fab fa-whatsapp"></i>
                 </a>
-            
-                <a href="https://www.instagram.com/gestiondecamas" target="_blank" aria-label="Instagram">
+
+                <a href="https://www.instagram.com/gestiondecamas" target="_blank">
                     <i class="fab fa-instagram"></i>
                 </a>
             </div>
-            
         </div>
 
     </div>
 
-    <!-- BARRA INFERIOR -->
     <div class="footer-bottom">
         © 2026 Gestión de Camas · Todos los derechos reservados
     </div>
 </footer>
+
+</body>
+</html>

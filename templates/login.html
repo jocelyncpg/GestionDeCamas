@@ -2,27 +2,22 @@
 {% block title %}Login{% endblock %}
 {% block content %}
 
-<div class="modal active">
+<!-- MODAL LOGIN -->
+<div id="loginModal" class="modal">
   <div class="modal-content">
-    <div class="modal-header">
-      <h2>Iniciar Sesión</h2>
-    </div>
+    <span class="close" onclick="closeLogin()">&times;</span>
 
-    <form method="POST">
-      <div class="form-group">
-        <label>Email</label>
-        <input type="email" name="email" required>
-      </div>
+    <h2>Acceso Plataforma</h2>
+    <p>Administrador</p>
 
-      <div class="form-group">
-        <label>Contraseña</label>
-        <input type="password" name="password" required>
-      </div>
+    <form onsubmit="fakeLogin(event)">
+      <input type="email" placeholder="Correo electrónico" required>
+      <input type="password" placeholder="Contraseña" required>
 
-      <button class="btn-login" onclick="openLogin()">Iniciar Sesión</button>
-
+      <button type="submit" class="btn-login">Ingresar</button>
     </form>
   </div>
 </div>
+
 
 {% endblock %}

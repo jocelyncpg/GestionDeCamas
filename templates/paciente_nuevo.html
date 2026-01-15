@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="page-content">
+
+    <!-- TÍTULO -->
+    <div class="page-banner page-banner--plain">
+        <h1>Nuevo Paciente</h1>
+        <p>Ingreso de información clínica y administrativa</p>
+    </div>
+
+    <!-- FORMULARIO -->
+    <div class="dashboard-card">
+
+        <form class="form-grid" enctype="multipart/form-data">
+
+            <div class="form-group">
+                <label>Nombre</label>
+                <input type="text" required>
+            </div>
+
+            <div class="form-group">
+                <label>Apellido</label>
+                <input type="text" required>
+            </div>
+
+            <div class="form-group">
+                <label>RUT</label>
+                <input type="text" required>
+            </div>
+
+            <div class="form-group">
+                <label>Edad</label>
+                <input type="number" required>
+            </div>
+
+            <div class="form-group">
+                <label>Sexo</label>
+                <select required>
+                    <option value="">Seleccione</option>
+                    <option>M</option>
+                    <option>F</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Previsión</label>
+                <select required>
+                    <option>Fonasa</option>
+                    <option>Cruz Blanca</option>
+                    <option>Colmena</option>
+                    <option>Otra</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Diagnóstico</label>
+                <input type="text" required>
+            </div>
+
+            <div class="form-group">
+                <label>Estado</label>
+                <select required>
+                    <option>En espera</option>
+                    <option>En tránsito</option>
+                    <option>Concluido</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Correo</label>
+                <input type="email">
+            </div>
+
+            <!-- ANAMNESIS -->
+            <div class="form-group full-width">
+                <label>Motivo / Anamnesis del traslado</label>
+                <textarea maxlength="200" rows="4"
+                    placeholder="Máximo 200 caracteres"></textarea>
+            </div>
+
+            <!-- ADJUNTOS -->
+            <div class="form-group full-width">
+                <label>Adjuntar exámenes / imágenes</label>
+                <input type="file" multiple>
+            </div>
+
+            <!-- BOTONES -->
+            <div class="form-actions">
+                <a href="/dashboard" class="btn-secondary">
+                    Cancelar
+                </a>
+
+                <button type="submit" class="btn-primary">
+                    Guardar Paciente
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+
+</section>
+
+{% endblock %}

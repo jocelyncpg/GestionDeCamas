@@ -36,7 +36,7 @@ def login():
             session["admin"] = True
             return redirect("/dashboard")
 
-    return render_template("login.html")
+    return render_template("dashboard.html")
 
 
 @app.route("/dashboard")
@@ -78,10 +78,12 @@ def logout():
     return redirect("/")
 
 
+@app.route("/pacientes/nuevo")
+def nuevo_paciente():
+    return render_template("paciente_nuevo.html")
+
+
+
 if __name__ == "__main__":
     app.run(debug=True)
 
-@app.route("/logout")
-def logout():
-    session.clear()
-    return redirect("/")
