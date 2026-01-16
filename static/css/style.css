@@ -5,7 +5,7 @@
     font-family: 'Segoe UI', sans-serif;
 }
 
-/* ===== HEADER / NAVBAR  ===== */
+/* Navbar */
 .header {
     background: white;
     border-bottom: 1px solid #e6eef4;
@@ -23,7 +23,7 @@
     justify-content: space-between;
 }
 
-/* LOGO */
+/* Logo */
 .logo {
     font-size: 22px;
     font-weight: 700;
@@ -31,7 +31,7 @@
     letter-spacing: 0.3px;
 }
 
-/* LINKS */
+/* Links footer */
 .nav-links {
     display: flex;
     align-items: center;
@@ -62,7 +62,6 @@
 }
 
 /* NavLogo */
-/* LOGO ESTILO CLÍNICA PRIVADA */
 .logo {
     display: flex;
     align-items: center;
@@ -70,7 +69,6 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-/* CÍRCULO DEL ICONO */
 .logo-icon {
     width: 56px;
     height: 56px;
@@ -81,14 +79,12 @@
     justify-content: center;
 }
 
-/* ICONO CAMA */
 .logo-icon img {
     width: 34px;
     height: 34px;
     object-fit: contain;
 }
 
-/* TEXTO */
 .logo-text {
     font-size: 28px;
     font-weight: 600;
@@ -97,7 +93,7 @@
 }
 
 
-/* BOTÓN LOGIN */
+/* Botón login */
 .btn-login {
     background: #d1dfe8;
     color: white;
@@ -125,7 +121,7 @@
     font-weight: bold;
 }
 
-/* HERO / CARRUSEL */
+/* Carrusel */
 .hero {
     height: 70vh;
     background: linear-gradient(
@@ -150,10 +146,8 @@
 }
 
 
-/* ===== SECCIÓN BENEFICIOS CLAVE ===== */
 .beneficios-section {
-    background: #eef5fb; /* azul muy claro, institucional */
-}
+    background: #eef5fb; }
 
 /* contenedor de beneficios */
 .beneficios-grid {
@@ -164,11 +158,11 @@
     margin-top: 60px;
 }
 
-/* cards más grandes */
+/* cards */
 .beneficios-grid .card {
     width: 320px;
     padding: 32px;
-    text-align: left; /* alineado profesional */
+    text-align: left; 
     border-radius: 16px;
     box-shadow: 0 18px 40px rgba(0, 63, 99, 0.12);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -192,8 +186,6 @@
 }
 
 
-
-/* SECCIONES */
 .section {
     padding: 60px;
     text-align: center;
@@ -204,7 +196,7 @@
     margin-bottom: 20px;
 }
 
-/* FORMULARIO */
+/* Formulario */
 .form-container {
     max-width: 500px;
     margin: auto;
@@ -229,7 +221,7 @@
     cursor: pointer;
 }
 
-/* LOGIN */
+/* Login */
 .login-box {
     max-width: 400px;
     margin: 80px auto;
@@ -244,7 +236,7 @@
     color: #0066a1;
 }
 
-/* FOOTER */
+/* Footer */
 .footer {
     background-color: #003f63;
     color: white;
@@ -261,7 +253,6 @@
     gap: 60px;
 }
 
-/* BRAND */
 .footer-brand h3 {
     font-size: 22px;
     margin-bottom: 15px;
@@ -273,7 +264,7 @@
     color: #dbe9f4;
 }
 
-/* LINKS */
+/* Links footers */
 .footer-links h4,
 .footer-contact h4 {
     font-size: 16px;
@@ -292,7 +283,7 @@
     color: white;
 }
 
-/* CONTACTO */
+/* Contacto footer */
 .footer-contact .contact-item {
     display: flex;
     align-items: center;
@@ -310,37 +301,34 @@
     color: white;
 }
 
-/* REDES */
+/* Redes footer */
 .footer-social {
     display: flex;
     justify-content: center;
-    gap: 18px; /* separación correcta entre iconos */
+    gap: 18px; 
     margin-top: 18px;
 }
 
 .footer-social a {
-    width: 44px;              /* un poco más grande */
+    width: 44px;          
     height: 44px;
     border-radius: 50%;
     background: #005f9e;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 20px;          /* icono más visible */
+    font-size: 20px;      
     text-decoration: none;
     color: white;
     transition: background 0.3s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .footer-social a:hover {
-    background: #0076c8;      /* azul más claro al hover */
+    background: #0076c8; 
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(0, 95, 158, 0.35);
 }
 
-
-
-/* BOTTOM */
 .footer-bottom {
     border-top: 1px solid rgba(255,255,255,0.15);
     text-align: center;
@@ -349,7 +337,7 @@
     color: #cfe3f2;
 }
 
-
+/* Cards */
 .card {
     width: 260px;
     background-color: white;
@@ -391,6 +379,7 @@
     cursor: pointer;
 }
 
+/* Modal */
 .modal {
     display: none;
     position: fixed;
@@ -572,7 +561,6 @@
     max-width: 520px;
 }
 
-/* DOTS */
 .carousel-dots {
     position: absolute;
     bottom: 30px;
@@ -594,7 +582,7 @@
     background: white;
 }
 
-/* ====== BANNER INTERNO (NOSOTROS / CONTACTO) ====== */
+/* Banner */
 .page-banner {
     background: linear-gradient(
         rgba(0, 63, 99, 0.75),
@@ -616,14 +604,13 @@
     opacity: 0.9;
 }
 
-/* ===CENTRADO == == */
 .page-content {
     max-width: 1100px;
     margin: 60px auto;
     padding: 0 20px;
 }
 
-/* ====== NOSOTROS ====== */
+/* Pag Nosotros */
 .team-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -722,8 +709,6 @@
     box-shadow: 0 10px 25px rgba(0, 63, 99, 0.3);
 }
 
-
-
 .page-banner--plain {
     background: #f4f8fb;
     color: #003f63;
@@ -739,7 +724,7 @@
     color: #555;
 }
 
-/* ===== DASHBOARD ===== */
+/* Pag Dashboard */
 .dashboard-card {
     background: white;
     border-radius: 16px;
@@ -773,7 +758,7 @@
     background: #f9fcff;
 }
 
-/* ===== ESTADOS ===== */
+/* Estados dashboard */
 .estado {
     padding: 6px 12px;
     border-radius: 20px;
@@ -797,7 +782,6 @@
     color: #566573;
 }
 
-/* ===== ICONO MAIL ===== */
 .mail-icon {
     font-size: 18px;
     color: #0066a1;
@@ -808,7 +792,6 @@
     color: #004f7a;
 }
 
-/* ===== DASHBOARD TOP BAR ===== */
 .dashboard-topbar {
     max-width: 1100px;
     margin: auto;
@@ -817,7 +800,7 @@
     align-items: center;
 }
 
-/* ===== CERRAR SESIÓN ===== */
+/* LogOut */
 .btn-logout {
     background: transparent;
     border: 1px solid #0066a1;
@@ -835,7 +818,6 @@
     color: white;
 }
 
-/* ===== DASHBOARD HEADER CENTRADO ===== */
 .page-banner--plain {
     position: relative;
     background: #f4f8fb;
@@ -855,7 +837,6 @@
     color: #666;
 }
 
-/* CERRAR SESIÓN */
 .btn-logout {
     position: absolute;
     top: 25px;
@@ -877,7 +858,6 @@
 }
 
 
-/* ===== SECCIÓN TEXTO + IMAGEN ===== */
 .info-split {
     max-width: 1200px;
     margin: auto;
@@ -921,7 +901,6 @@
     object-fit: cover;
 }
 
-/* ===== BENEFICIOS ===== */
 .benefits-grid {
     display: flex;
     gap: 30px;
@@ -930,14 +909,14 @@
     margin-top: 50px;
 }
 
-/* ===== RESPONSIVE ===== */
+/*  Responsivo */
 @media (max-width: 900px) {
     .info-split,
     .info-split.reverse {
         flex-direction: column;
     }
 }
-/* ===== TEXTO ALINEADO A LA IZQUIERDA ===== */
+
 .info-card {
     text-align: left;
 }
@@ -953,7 +932,6 @@
     max-width: 520px;
 }
 
-/* ===== BANNER QUIÉNES SOMOS ===== */
 .page-banner-inner {
     max-width: 1100px;
     margin: auto;
@@ -971,7 +949,6 @@
     color: #555;
 }
 
-/* ===== BLOQUE TEXTO + IMAGEN ===== */
 .info-split {
     display: flex;
     gap: 60px;
@@ -1005,14 +982,13 @@
     box-shadow: 0 20px 45px rgba(0,0,0,0.12);
 }
 
-/* ===== AJUSTE TEAM ===== */
 .section h2 {
     text-align: left;
     margin-bottom: 40px;
     color: #003f63;
 }
 
-/* RESPONSIVE */
+/* Responsivo */
 @media (max-width: 900px) {
     .info-split {
         flex-direction: column;
@@ -1029,11 +1005,10 @@
     box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 }
 
-/* BOTÓN ENVIAR – centrado y más pequeño */
 .contact-box button {
-    align-self: center;          /* lo centra dentro del form */
-    width: auto;                 /* evita ancho completo */
-    min-width: 180px;            /* tamaño profesional */
+    align-self: center;          
+    width: auto;                 
+    min-width: 180px;            
     padding: 12px 28px;
     background: linear-gradient(135deg, #0066a1, #004f7a);
     color: white;
@@ -1168,7 +1143,7 @@
     gap: 10px;
 }
 
-/* ===== FORMULARIOS DASHBOARD ===== */
+/* Formulario Dasboard */
 
 .form-grid {
     display: grid;
@@ -1207,24 +1182,19 @@
     box-shadow: 0 0 0 2px rgba(0,95,158,0.15);
 }
 
-/* Campos grandes */
 .full-width {
     grid-column: 1 / -1;
 }
 
-/* Textarea */
 .form-group textarea {
     resize: none;
 }
 
-/* Adjuntos */
 .form-group input[type="file"] {
     padding: 8px;
     background: #f4f8fb;
     border: 1px dashed #b6c6d6;
 }
-
-/* ===== BOTONES ===== */
 
 .form-actions {
     grid-column: 1 / -1;
@@ -1234,6 +1204,7 @@
     margin-top: 10px;
 }
 
+/* Botones */
 .btn-primary {
     background-color: #005f9e;
     color: white;
