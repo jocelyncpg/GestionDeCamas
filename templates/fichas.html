@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="page-content">
+    <div class="page-banner page-banner--plain">
+        <h1>Archivo Histórico de Fichas</h1>
+        <p>Consulta de registros clínicos de pacientes con proceso asistencial concluido.</p>
+    </div>
+
+    <div class="dashboard-actions">
+        <div class="search-container" style="display: flex; gap: 10px; flex: 1;">
+            <input type="text" id="busquedaFicha" placeholder="Buscar por RUT, Nombre o Diagnóstico..." class="search-input" style="width: 100%; max-width: 400px;">
+            <button class="btn-primary" onclick="filtrarFichas()">
+                <i class="fa fa-search"></i> Buscar
+            </button>
+        </div>
+        <button class="btn-secondary" onclick="limpiarFiltro()">Ver Todos</button>
+    </div>
+
+    <div class="dashboard-card">
+        <table class="dashboard-table" id="tablaFichas">
+            <thead>
+                <tr>
+                    <th>Fecha Alta</th>
+                    <th>RUT</th>
+                    <th>Paciente</th>
+                    <th>Convenio</th>
+                    <th>Diagnóstico Final</th>
+                    <th>Unidad Origen</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="ficha-row">
+                    <td>10/01/2026</td>
+                    <td>15.234.111-7</td>
+                    <td>Carlos Soto</td>
+                    <td>Colmena</td>
+                    <td>Post operatorio</td>
+                    <td>Piso 3</td>
+                    <td>
+                        <button class="btn-ver-ficha" onclick="verDetalle('Carlos Soto')">
+                            <i class="fa fa-file-medical"></i> Ver Ficha
+                        </button>
+                    </td>
+                </tr>
+                <tr class="ficha-row">
+                    <td>08/01/2026</td>
+                    <td>11.445.332-k</td>
+                    <td>Lucía Mendez</td>
+                    <td>Fonasa</td>
+                    <td>Fractura de Fémur</td>
+                    <td>Urgencias</td>
+                    <td>
+                        <button class="btn-ver-ficha" onclick="verDetalle('Lucía Mendez')">
+                            <i class="fa fa-file-medical"></i> Ver Ficha
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<script>
+    function filtrarFichas() {
+        const input = document.getElementById('busquedaFicha').value.toLowerCase();
+        const filas = document.querySelectorAll('.ficha-row');
+
+        filas.forEach(fila => {
+            const texto = fila.innerText.toLowerCase();
+            fila.style.display = texto.includes(input) ? '' : 'none';
+        });
+    }
+
+    function limpiarFiltro() {
+        document.getElementById('busquedaFicha').value = '';
+        filtrarFichas();
+    }
+
+    function verDetalle(paciente) {
+        alert("Abriendo expediente clínico digital de: " + paciente + "\nGenerando PDF de epicrisis...");
+    }
+</script>
+
+{% endblock %}

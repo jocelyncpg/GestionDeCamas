@@ -1268,3 +1268,129 @@
         grid-template-columns: 1fr;
     }
 }
+
+/* ===== SECCIÓN GESTIÓN DE CAMILLAS ===== */
+
+.camillas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.cama-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    border-top: 6px solid #ccc; /* Color base */
+    transition: transform 0.2s ease;
+}
+
+.cama-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Variaciones de color según estado */
+.estado-ocupada { border-top-color: #dc3545; }
+.estado-disponible { border-top-color: #28a745; }
+.estado-mantenimiento { border-top-color: #ffc107; }
+
+.cama-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.cama-id {
+    font-weight: 700;
+    color: #003f63;
+    font-size: 14px;
+}
+
+.badge {
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.estado-ocupada .badge { background: #fdeaea; color: #dc3545; }
+.estado-disponible .badge { background: #eafaf1; color: #28a745; }
+.estado-mantenimiento .badge { background: #fff9e6; color: #997400; }
+
+.cama-body h3 {
+    font-size: 18px;
+    color: #003f63;
+    margin-bottom: 10px;
+}
+
+.cama-body p {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.cama-footer {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.btn-action {
+    flex: 1;
+    padding: 8px;
+    border-radius: 6px;
+    border: none;
+    background: #0066a1;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-action.outline {
+    background: transparent;
+    border: 1px solid #0066a1;
+    color: #0066a1;
+}
+
+/* ===== ESTILOS VISTA FICHAS ===== */
+
+.btn-ver-ficha {
+    background: #003f63;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s;
+}
+
+.btn-ver-ficha:hover {
+    background: #005f9e;
+}
+
+.btn-ver-ficha i {
+    font-size: 14px;
+}
+
+/* Resaltar fila al pasar el mouse */
+.ficha-row:hover {
+    background-color: #f0f7ff !important;
+}
+
+/* Estilo para el buscador */
+.search-container .search-input:focus {
+    border-color: #0066a1;
+    box-shadow: 0 0 5px rgba(0,102,161,0.2);
+    outline: none;
+}

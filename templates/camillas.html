@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="page-content">
+    <div class="page-banner page-banner--plain">
+        <h1>Asignación de Unidades</h1>
+        <p>Seleccione una cama disponible compatible con el convenio del paciente.</p>
+    </div>
+
+    <div class="highlight-patient">
+        <h3 style="color: #856404; font-size: 16px;">
+            <i class="fa fa-user-clock"></i> Asignando cama para: 
+            <span id="paciente-nombre">Cargando...</span>
+        </h3>
+        <p style="font-size: 14px; margin-top: 5px;">
+            <strong>Convenio Detectado:</strong> <span id="paciente-prevision">Cruz Blanca</span>
+        </p>
+    </div>
+
+    <div class="camillas-grid">
+        
+        <div class="cama-card estado-disponible">
+            <div class="cama-header">
+                <span class="cama-id">UCI - 04</span>
+                <span class="badge">Disponible</span>
+            </div>
+            <div class="cama-body">
+                <h3>Cama Crítica</h3>
+                <p>Ubicación: Ala Norte, Piso 2</p>
+                <span class="convenio-tag">Acepta: Cruz Blanca / Colmena / Fonasa</span>
+            </div>
+            <div class="cama-footer">
+                <button class="btn-primary" onclick="confirmar()">Asignar a este Paciente</button>
+            </div>
+        </div>
+
+        <div class="cama-card" style="opacity: 0.6; border-top-color: #6c757d;">
+            <div class="cama-header">
+                <span class="cama-id">PED - 01</span>
+                <span class="badge" style="background: #eee; color: #666;">Solo Pediatría</span>
+            </div>
+            <div class="cama-body">
+                <h3>Cama Infantil</h3>
+                <p>Ubicación: Torre B, Piso 1</p>
+                <span class="convenio-tag">Acepta: Todos los convenios</span>
+            </div>
+            <div class="cama-footer">
+                <button class="btn-action outline" disabled>No compatible (Edad)</button>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const nombre = urlParams.get('paciente') || "Paciente No Seleccionado";
+    const prevision = urlParams.get('prevision') || "No definida";
+
+    document.getElementById('paciente-nombre').innerText = nombre;
+    document.getElementById('paciente-prevision').innerText = prevision;
+
+    function confirmar() {
+        alert("¡Éxito! El paciente " + nombre + " ha sido asignado a la cama UCI-04. Se ha notificado al equipo de enfermería.");
+        window.location.href = "/dashboard";
+    }
+</script>
+
+{% endblock %}

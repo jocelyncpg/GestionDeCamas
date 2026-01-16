@@ -29,12 +29,14 @@ def contacto():
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
-        email = request.form["email"]
-        password = request.form["password"]
+        email = request.form.get("email")
+        password = request.form.get("password")
 
         if email == ADMIN_EMAIL and password == ADMIN_PASS:
             session["admin"] = True
             return redirect("/dashboard")
+        else:
+            return redirect("/contacto")
 
     return render_template("dashboard.html")
 
@@ -82,7 +84,17 @@ def logout():
 def nuevo_paciente():
     return render_template("paciente_nuevo.html")
 
+@app.route("/camillas")
+def camillas():
+    if not session.get("admin"):
+        return redirect("/")
+    return render_template("camillas.html")
 
+@app.route("/fichas")
+def fichas():
+    if not session.get("admin"):
+        return redirect("/")
+    return render_template("fichas.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
