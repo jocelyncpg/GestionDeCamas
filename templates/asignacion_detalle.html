@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="page-content">
+    <div class="page-banner page-banner--plain">
+        <h1>Configuración de Traslado</h1>
+        <p>Defina cómo se realizará el movimiento del paciente a la unidad seleccionada.</p>
+    </div>
+
+    <div class="dashboard-card" style="max-width: 800px; margin: 20px auto; padding: 30px;">
+        <h2 style="color: #003f63; margin-bottom: 20px;">
+            Paciente: <span id="nombre-pax" style="color: #0066a1;"></span>
+        </h2>
+        <p><strong>Unidad Destino:</strong> <span id="cama-dest"></span></p>
+
+        <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;">
+
+        <h3>Seleccione el medio de transporte:</h3>
+        
+        <div class="opciones-traslado" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;">
+            
+            <div class="card-opcion" onclick="seleccionarOpcion(this, 'propio')">
+                <i class="fa fa-walking" style="font-size: 2rem; color: #0066a1;"></i>
+                <h4>Medios Propios</h4>
+                <p>El paciente se traslada por su cuenta o con familiares.</p>
+            </div>
+
+            <div class="card-opcion" onclick="seleccionarOpcion(this, 'asignado')">
+                <i class="fa fa-ambulance" style="font-size: 2rem; color: #dc3545;"></i>
+                <h4>Medio Asignado</h4>
+                <p>Requiere ambulancia, camillero o transporte institucional.</p>
+            </div>
+
+        </div>
+
+        <div id="detalle-transporte" style="display: none; margin-top: 20px; background: #f9f9f9; padding: 15px; border-radius: 8px;">
+            <label>Tipo de Unidad Requerida:</label>
+            <select class="search-input" style="width: 100%; margin-top: 10px;">
+                <option>Ambulancia Básica</option>
+                <option>Ambulancia Avanzada (SAMU)</option>
+                <option>Silla de Ruedas / Camillero</option>
+            </select>
+        </div>
+
+        <div style="margin-top: 30px; display: flex; justify-content: flex-end; gap: 10px;">
+            <a href="/camillas" class="btn-secondary" style="text-decoration:none;">Volver</a>
+            <button class="btn-primary" onclick="finalizarProceso()">Finalizar Asignación</button>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Captura datos de la URL
+    const params = new URLSearchParams(window.location.search);
+    document.getElementById('nombre-pax').innerText = params.get('paciente') || 'Paciente';
+    document.getElementById('cama-dest').innerText = params.get('cama') || 'No asignada';
+
+    function seleccionarOpcion(elemento, tipo) {
+        // Estética de selección
+        document.querySelectorAll('.card-opcion').forEach(c => c.classList.remove('selected'));
+        elemento.classList.add('selected');
+
+        // Mostrar/Ocultar detalles de ambulancia
+        const detalle = document.getElementById('detalle-transporte');
+        detalle.style.display = (tipo === 'asignado') ? 'block' : 'none';
+    }
+
+    function finalizarProceso() {
+        alert("Proceso completado. Se ha generado la orden de traslado y se ha actualizado el estado del paciente.");
+        window.location.href = "/dashboard";
+    }
+</script>
+
+{% endblock %}

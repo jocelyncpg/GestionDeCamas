@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="page-content">
+    <div class="page-banner page-banner--plain">
+        <h1>Asignación de Recurso Móvil</h1>
+        <p>Seleccione el móvil disponible para el traslado de: <strong>{{ request.args.get('paciente') }}</strong></p>
+    </div>
+
+    <div class="camillas-grid">
+        
+        <div class="cama-card estado-disponible" style="border-top-color: #0066a1;">
+            <div class="cama-header">
+                <span class="cama-id">MÓVIL SAMU-102</span>
+                <span class="badge">Disponible</span>
+            </div>
+            <div class="cama-body">
+                <h3>Ambulancia Avanzada (M1)</h3>
+                <p><strong>Personal:</strong> Reanimador + Técnico + Conductor</p>
+                <p><strong>Ubicación:</strong> Base Central</p>
+            </div>
+            <div class="cama-footer">
+                <button class="btn-primary" onclick="despachar('SAMU-102')">Despachar Móvil</button>
+            </div>
+        </div>
+
+        <div class="cama-card" style="opacity: 0.6; border-top-color: #ccc;">
+            <div class="cama-header">
+                <span class="cama-id">MÓVIL B-45</span>
+                <span class="badge" style="background: #eee; color: #666;">En Traslado</span>
+            </div>
+            <div class="cama-body">
+                <h3>Ambulancia Básica (M2)</h3>
+                <p><strong>Destino:</strong> Hospital Clínico</p>
+                <p><strong>ETA:</strong> 15 min</p>
+            </div>
+            <div class="cama-footer">
+                <button class="btn-action outline" disabled>No Disponible</button>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script>
+    function despachar(movil) {
+        alert("¡Móvil " + movil + " despachado con éxito!\nEl estado del paciente ha cambiado a 'En Traslado'.");
+        window.location.href = "/logistica";
+    }
+</script>
+
+{% endblock %}

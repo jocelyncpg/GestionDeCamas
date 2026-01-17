@@ -1394,3 +1394,225 @@
     box-shadow: 0 0 5px rgba(0,102,161,0.2);
     outline: none;
 }
+
+/* Estilos para las tarjetas de opción de traslado */
+.card-opcion {
+    border: 2px solid #e6eef4;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.card-opcion:hover {
+    border-color: #0066a1;
+    background-color: #f0f7ff;
+}
+
+.card-opcion.selected {
+    border-color: #0066a1;
+    background-color: #eef5fb;
+    box-shadow: 0 0 10px rgba(0,102,161,0.2);
+}
+
+.card-opcion h4 {
+    margin: 15px 0 10px;
+    color: #003f63;
+}
+
+.card-opcion p {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.4;
+}
+
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.full-width {
+    grid-column: span 2;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #4a5568;
+}
+
+#formTraslado textarea {
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid #cbd5e0;
+    padding: 10px;
+    font-family: inherit;
+}
+
+/* Contenedor de la botonera triple */
+.form-actions-triple {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 30px;
+    padding-top: 25px;
+    border-top: 1px solid #e2e8f0;
+}
+.form-actions-triple {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 30px;
+    padding-top: 25px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.btn-action-form {
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+/* 1. Cancelar */
+.btn-cancelar {
+    background: #edf2f7;
+    color: #4a5568;
+    flex: 1;
+}
+
+/* 2. Guardar (Naranja) */
+.btn-guardar {
+    background: #f6ad55;
+    color: white;
+    flex: 1;
+}
+
+/* 3. Concluir (Azul) */
+.btn-concluir {
+    background: #0066a1;
+    color: white;
+    flex: 1.5; /* Un poco más grande */
+}
+
+.btn-concluir:hover { background: #004f7a; transform: translateY(-2px); }
+.btn-guardar:hover { background: #ed8936; }
+.btn-cancelar:hover { background: #e2e8f0; }
+
+
+/* Ajustes para la vista de cuentas */
+.cuentas-container aside .form-group {
+    margin-bottom: 15px;
+}
+
+.cuentas-container aside label {
+    font-size: 13px;
+    font-weight: 700;
+    color: #4a5568;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.cuentas-container aside input, 
+.cuentas-container aside select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+}
+
+/* Badge de rol */
+.badge {
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* ===== BOTÓN CERRAR SESIÓN ===== */
+
+.btn-logout {
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid #e0e6ed;
+    color: #003f63;
+    background-color: #f4f8fb;
+    transition: all 0.2s ease;
+}
+
+.btn-logout:hover {
+    background-color: #fbeaea;
+    border-color: #f5c2c0;
+    color: #b02a2a;
+}
+
+.btn-logout {
+    display: inline-flex;       /* 🔑 igual que links */
+    align-items: center;
+    height: 36px;               /* misma altura visual */
+    padding: 0 14px;
+
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+
+    text-decoration: none;
+    color: #003f63;
+    background-color: #f4f8fb;
+    border: 1px solid #e0e6ed;
+
+    transition: all 0.2s ease;
+}
+
+.btn-logout:hover {
+    background-color: #fbeaea;
+    border-color: #f5c2c0;
+    color: #b02a2a;
+}
+
+.carousel-slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    display: flex;
+    align-items: center;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+.carousel-slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    display: flex;
+    align-items: center;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+

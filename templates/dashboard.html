@@ -13,12 +13,9 @@
     <div class="dashboard-actions">
         <input type="text" placeholder="Buscar por RUT" class="search-input">
 
-        <!-- BOTÓN NUEVO -->
         <a href="/pacientes/nuevo" class="btn-primary">
             + Nuevo Paciente
         </a>
-        
-        
     </div>
 
     <!-- TABLA -->
@@ -36,11 +33,13 @@
                     <th>Diagnóstico</th>
                     <th>Estado</th>
                     <th>Correo</th>
+                    <th>Asignar</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
 
             <tbody>
+
                 <tr>
                     <td>001</td>
                     <td>Juan</td>
@@ -50,12 +49,17 @@
                     <td>M</td>
                     <td>Cruz Blanca</td>
                     <td>Neumonía</td>
-                    <td><span class="estado estado-transito">En tránsito</span></td>
+                    <td><span class="estado estado-transito">Tránsito</span></td>
                     <td><i class="fa fa-envelope mail-icon"></i></td>
-                    <td class="actions">
-                        <a href="/camillas?paciente=Juan+Perez&prevision=Cruz+Blanca" class="btn-asignar" title="Asignar Unidad">
-                            <i class="fa fa-bed"></i> Asignar
+
+                    <td class="assign">
+                        <a href="/camillas?paciente=Juan+Perez&prevision=Cruz+Blanca"
+                           title="Asignar cama">
+                            <i class="fa fa-bed"></i>
                         </a>
+                    </td>
+
+                    <td class="actions">
                         <i class="fa fa-pen"></i>
                         <i class="fa fa-trash"></i>
                     </td>
@@ -72,6 +76,14 @@
                     <td>Traumatismo</td>
                     <td><span class="estado estado-espera">En espera</span></td>
                     <td><i class="fa fa-envelope mail-icon"></i></td>
+
+                    <td class="assign">
+                        <a href="/camillas?paciente=Maria+Gonzalez&prevision=Fonasa"
+                           title="Asignar cama">
+                            <i class="fa fa-bed"></i>
+                        </a>
+                    </td>
+
                     <td class="actions">
                         <i class="fa fa-pen"></i>
                         <i class="fa fa-trash"></i>
@@ -89,45 +101,17 @@
                     <td>Post operatorio</td>
                     <td><span class="estado estado-ok">Concluido</span></td>
                     <td><i class="fa fa-envelope mail-icon"></i></td>
+
+                    <td class="assign">
+                        <i class="fa fa-bed disabled"></i>
+                    </td>
+
                     <td class="actions">
                         <i class="fa fa-pen"></i>
                         <i class="fa fa-trash"></i>
                     </td>
                 </tr>
 
-                <tr>
-                    <td>004</td>
-                    <td>Ana</td>
-                    <td>Rojas</td>
-                    <td>18.223.456-1</td>
-                    <td>34</td>
-                    <td>F</td>
-                    <td>Otra</td>
-                    <td>Dolor abdominal</td>
-                    <td><span class="estado estado-espera">En espera</span></td>
-                    <td><i class="fa fa-envelope mail-icon"></i></td>
-                    <td class="actions">
-                        <i class="fa fa-pen"></i>
-                        <i class="fa fa-trash"></i>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>005</td>
-                    <td>Luis</td>
-                    <td>Morales</td>
-                    <td>10.998.776-5</td>
-                    <td>71</td>
-                    <td>M</td>
-                    <td>Fonasa</td>
-                    <td>Insuficiencia respiratoria</td>
-                    <td><span class="estado estado-transito">En tránsito</span></td>
-                    <td><i class="fa fa-envelope mail-icon"></i></td>
-                    <td class="actions">
-                        <i class="fa fa-pen"></i>
-                        <i class="fa fa-trash"></i>
-                    </td>
-                </tr>
             </tbody>
         </table>
     </div>
@@ -142,4 +126,3 @@
 </section>
 
 {% endblock %}
-

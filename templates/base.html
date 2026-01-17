@@ -43,11 +43,13 @@
 
         <nav class="nav-links">
         {% if session.get('admin') %}
-            <a href="/dashboard">pacientes</a>
-            <a href="/fichas">Ver Fichas</a>
-            <a href="/historial">Historial</a>
-            <a href="/logout" class="btn-logout" style="color: #d9534f;">Cerrar Sesión</a>
-        {% else %}
+            <a href="/cuentas">Cuentas</a> 
+            <a href="/dashboard">Pacientes</a>
+            <a href="/logistica">Traslados</a>
+            <a href="/fichas">Historial </a>
+            <a href="/logout"> Cerrar Sesión </a>
+
+            {% else %}
             <a href="/">Inicio</a>
             <a href="/nosotros">Nosotros</a>
             <a href="/contacto">Contacto</a>
@@ -132,6 +134,8 @@
         © 2026 Gestión de Camas · Todos los derechos reservados
     </div>
 </footer>
+
+<script src="{{ url_for('static', filename='js/carousel.js') }}"></script>
 
 </body>
 </html>

@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="page-content">
+    <div class="page-banner page-banner--plain">
+        <h1>Central de Logística y Traslados</h1>
+        <p>Gestión de ambulancias y medios de transporte institucional.</p>
+    </div>
+
+    <div class="dashboard-actions">
+        <div class="filter-group">
+            <span class="badge" style="background: #fdf2e2; color: #e67e22; padding: 10px;">
+                <i class="fa fa-clock"></i> 3 Traslados Pendientes
+            </span>
+        </div>
+        <input type="text" placeholder="Filtrar por paciente o unidad..." class="search-input" style="width: 300px;">
+    </div>
+
+    <div class="dashboard-card">
+        <table class="dashboard-table">
+            <thead>
+                <tr>
+                    <th>Paciente</th>
+                    <th>Origen (Actual)</th>
+                    <th>Destino (Asignado)</th>
+                    <th>Medio Solicitado</th>
+                    <th>Prioridad</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Juan Pérez</strong></td>
+                    <td>Box Urgencias 02</td>
+                    <td>UCI - Cama 04</td>
+                    <td><i class="fa fa-ambulance"></i> Ambulancia Avanzada</td>
+                    <td><span class="estado estado-espera" style="background: #fdeaea; color: #dc3545;">CRÍTICO</span></td>
+                    <td>
+                        <a href="/asignar-movil?paciente=Juan+Perez&tipo=Ambulancia+Avanzada" class="btn-ver-ficha">
+                            Asignar Móvil
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>María González</strong></td>
+                    <td>Piso 3 - Hab 301</td>
+                    <td>Radiología</td>
+                    <td><i class="fa fa-wheelchair"></i> Silla de Ruedas</td>
+                    <td><span class="estado estado-transito">Normal</span></td>
+                    <td>
+                        <a href="/formulario-traslado?paciente=Maria+Gonzalez&origen=Piso+3&destino=Radiologia" class="btn-ver-ficha">
+                            Asignar Camillero
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+{% endblock %}

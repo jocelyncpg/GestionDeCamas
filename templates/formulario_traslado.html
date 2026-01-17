@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="page-content">
+    <div class="page-banner page-banner--plain" id="banner-estado">
+        <h1 id="titulo-pagina">Registro de Traslado</h1>
+        <p id="subtitulo-pagina">Gestión de personal y seguimiento de trayecto.</p>
+    </div>
+
+    <div class="dashboard-card" style="max-width: 750px; margin: 0 auto;">
+        <form id="formTraslado">
+            <h3 style="color: #003f63; margin-bottom: 20px; border-bottom: 2px solid #eee; padding-bottom: 10px;">
+                <i class="fa fa-clipboard-check"></i> Información del Servicio
+            </h3>
+
+            <div class="form-group" style="margin-bottom: 25px;">
+                <label>¿Registrar personal responsable?</label>
+                <select id="switchDatos" class="search-input" onchange="actualizarInterfaz(this.value)">
+                    <option value="si">Sí, ingresar datos del personal</option>
+                    <option value="no">No (TRASLADO CRÍTICO / URGENTE)</option>
+                </select>
+            </div>
+
+            <div id="seccionResponsable">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Nombre del Camillero / Operador</label>
+                        <input type="text" placeholder="Ej: Pedro Arancibia">
+                    </div>
+                    <div class="form-group">
+                        <label>RUT</label>
+                        <input type="text" placeholder="12.345.678-k">
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Contacto (Teléfono/Radio)</label>
+                        <input type="text" placeholder="+56 9 8765 4321">
+                    </div>
+                </div>
+            </div>
+
+            <div id="alertaCritica" style="display: none; background: #fff5f5; border: 2px solid #fc8181; padding: 15px; border-radius: 8px; margin-bottom: 20px; animation: pulse 2s infinite;">
+                <p style="color: #c53030; font-weight: bold; text-align: center; margin: 0;">
+                    <i class="fa fa-exclamation-triangle"></i> ATENCIÓN: ESTADO CRÍTICO ACTIVADO <i class="fa fa-exclamation-triangle"></i>
+                    <br><span style="font-weight: normal; font-size: 0.9em;">Prioridad máxima. Registro de personal omitido por urgencia clínica.</span>
+                </p>
+            </div>
+
+            <div style="margin-top: 30px; padding-top: 20px; border-top: 1px dashed #ccc;">
+                <h3 style="color: #003f63; margin-bottom: 15px;">Bitácora de Eventos</h3>
+                <div class="form-group full-width">
+                    <label>Observaciones del trayecto</label>
+                    <textarea rows="4" id="descripcion" placeholder="Escriba aquí los avances o novedades del traslado..."></textarea>
+                </div>
+            </div>
+
+            <div class="form-actions-triple">
+                <button type="button" class="btn-action-form btn-cancelar" onclick="window.history.back()">
+                    <i class="fa fa-times"></i> Cancelar
+                </button>
+                
+                <button type="button" class="btn-action-form btn-guardar" onclick="guardarProgreso()">
+                    <i class="fa fa-save"></i> Guardar
+                </button>
+                
+                <button type="button" class="btn-action-form btn-concluir" onclick="concluir()">
+                    <i class="fa fa-check-double"></i> Concluir y Guardar
+                </button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<script>
+    function actualizarInterfaz(valor) {
+        const seccion = document.getElementById('seccionResponsable');
+        const alerta = document.getElementById('alertaCritica');
+        const banner = document.getElementById('banner-estado');
+        const titulo = document.getElementById('titulo-pagina');
+
+        if (valor === 'no') {
+            // Cambio a Estado Crítico
+            seccion.style.display = 'none';
+            alerta.style.display = 'block';
+            banner.style.background = '#c53030'; // Banner Rojo
+            titulo.innerText = "TRASLADO DE EMERGENCIA";
+        } else {
+            // Regreso a Normal
+            seccion.style.display = 'block';
+            alerta.style.display = 'none';
+            banner.style.background = '#003f63'; // Color original
+            titulo.innerText = "Registro de Traslado";
+        }
+    }
+
+    function guardarProgreso() {
+        alert("Progreso guardado: Se han registrado las observaciones actuales.");
+    }
+
+    function concluir() {
+        const desc = document.getElementById('descripcion').value;
+        if (desc.trim() === "") {
+            alert("Debe ingresar una descripción para finalizar el proceso.");
+            return;
+        }
+        alert("Traslado CONCLUIDO con éxito. El paciente ha llegado a destino.");
+        window.location.href = "/logistica";
+    }
+</script>
+
+<style>
+    /* Animación para la alerta de urgencia */
+    @keyframes pulse {
+        0% { box-shadow: 0 0 0 0px rgba(220, 53, 69, 0.4); }
+        70% { box-shadow: 0 0 0 10px rgba(220, 53, 69, 0); }
+        100% { box-shadow: 0 0 0 0px rgba(220, 53, 69, 0); }
+    }
+</style>
+
+{% endblock %}

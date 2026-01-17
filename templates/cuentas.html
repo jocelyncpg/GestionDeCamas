@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="page-content">
+    <div class="page-banner page-banner--plain">
+        <h1>Gestión de Usuarios y Accesos</h1>
+        <p>Administre las cuentas del personal clínico y administrativo del sistema.</p>
+    </div>
+
+    <div class="cuentas-container" style="display: grid; grid-template-columns: 350px 1fr; gap: 30px; margin-top: 30px;">
+        
+        <aside class="dashboard-card" id="panel-usuario">
+            <h3 id="form-title" style="color: #003f63; margin-bottom: 20px;">Crear Nuevo Usuario</h3>
+            <form id="formUsuario">
+                <div class="form-group">
+                    <label>Nombre Completo</label>
+                    <input type="text" id="user-nombre" placeholder="Ej: Dr. Andrés Silva" required>
+                </div>
+                <div class="form-group">
+                    <label>Correo Electrónico</label>
+                    <input type="email" id="user-email" placeholder="andres.silva@hospital.cl" required>
+                </div>
+                <div class="form-group">
+                    <label>Rol / Permisos</label>
+                    <select id="user-rol" class="search-input" style="width: 100%;">
+                        <option value="Admin">Administrador</option>
+                        <option value="Medico">Médico / Clínico</option>
+                        <option value="Logistica">Logística / Traslados</option>
+                    </select>
+                </div>
+                <div class="form-group" id="pass-group">
+                    <label>Contraseña Temporal</label>
+                    <input type="password" id="user-pass" placeholder="********">
+                </div>
+
+                <div style="margin-top: 20px; display: flex; flex-direction: column; gap: 10px;">
+                    <button type="button" class="btn-primary" onclick="guardarUsuario()" id="btn-main">Crear Usuario</button>
+                    <button type="button" class="btn-secondary" onclick="resetForm()" id="btn-cancelar" style="display: none;">Cancelar Edición</button>
+                </div>
+            </form>
+        </aside>
+
+        <main class="dashboard-card">
+            <table class="dashboard-table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Email</th>
+                        <th>Rol</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Jorge Pérez</strong></td>
+                        <td>jorge.p@sistema.cl</td>
+                        <td><span class="badge" style="background:#eef5fb; color:#0066a1;">Admin</span></td>
+                        <td><span class="estado estado-ok">Activo</span></td>
+                        <td class="actions">
+                            <button onclick="prepararEdicion('Jorge Pérez', 'jorge.p@sistema.cl', 'Admin')" title="Editar Datos" style="border:none; background:none; cursor:pointer;"><i class="fa fa-edit" style="color:#f39c12;"></i></button>
+                            <button onclick="alert('Enlace de restablecimiento enviado')" title="Restablecer Clave" style="border:none; background:none; cursor:pointer;"><i class="fa fa-key" style="color:#0066a1; margin-left:10px;"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>María Soto</strong></td>
+                        <td>m.soto@clinica.cl</td>
+                        <td><span class="badge" style="background:#fdf2e2; color:#e67e22;">Médico</span></td>
+                        <td><span class="estado estado-ok">Activo</span></td>
+                        <td class="actions">
+                            <button onclick="prepararEdicion('María Soto', 'm.soto@clinica.cl', 'Medico')" title="Editar Datos" style="border:none; background:none; cursor:pointer;"><i class="fa fa-edit" style="color:#f39c12;"></i></button>
+                            <button onclick="alert('Enlace de restablecimiento enviado')" title="Restablecer Clave" style="border:none; background:none; cursor:pointer;"><i class="fa fa-key" style="color:#0066a1; margin-left:10px;"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+    </div>
+</section>
+
+<script>
+    // Función para "Cargar" los datos en el formulario para editar
+    function prepararEdicion(nombre, email, rol) {
+        document.getElementById('form-title').innerText = "Modificar Usuario";
+        document.getElementById('user-nombre').value = nombre;
+        document.getElementById('user-email').value = email;
+        document.getElementById('user-rol').value = rol;
+        document.getElementById('pass-group').style.display = 'none'; // No editamos clave aquí por seguridad
+        document.getElementById('btn-main').innerText = "Actualizar Datos";
+        document.getElementById('btn-cancelar').style.display = 'block';
+        
+        // Efecto visual
+        document.getElementById('panel-usuario').style.border = "2px solid #f39c12";
+    }
+
+    function resetForm() {
+        document.getElementById('formUsuario').reset();
+        document.getElementById('form-title').innerText = "Crear Nuevo Usuario";
+        document.getElementById('pass-group').style.display = 'block';
+        document.getElementById('btn-main').innerText = "Crear Usuario";
+        document.getElementById('btn-cancelar').style.display = 'none';
+        document.getElementById('panel-usuario').style.border = "none";
+    }
+
+    function guardarUsuario() {
+        const accion = document.getElementById('btn-main').innerText;
+        alert("¡Éxito! Usuario " + (accion === "Crear Usuario" ? "registrado" : "actualizado") + " correctamente en la base de datos.");
+        resetForm();
+    }
+</script>
+
+{% endblock %}

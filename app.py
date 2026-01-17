@@ -96,6 +96,36 @@ def fichas():
         return redirect("/")
     return render_template("fichas.html")
 
+@app.route("/asignacion-detalle")
+def asignacion_detalle():
+    if not session.get("admin"):
+        return redirect("/")
+    return render_template("asignacion_detalle.html")
+
+@app.route("/logistica")
+def logistica():
+    if not session.get("admin"):
+        return redirect("/")
+    return render_template("logistica.html")
+
+@app.route("/asignar-movil")
+def asignar_movil():
+    if not session.get("admin"):
+        return redirect("/")
+    return render_template("asignar_movil.html")
+
+@app.route("/formulario-traslado")
+def formulario_traslado():
+    if not session.get("admin"):
+        return redirect("/")
+    return render_template("formulario_traslado.html")
+
+@app.route("/cuentas")
+def cuentas():
+    if not session.get("admin"):
+        return redirect("/")
+    return render_template("cuentas.html")
+    
 if __name__ == "__main__":
     app.run(debug=True)
 
